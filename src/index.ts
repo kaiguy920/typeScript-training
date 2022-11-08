@@ -73,4 +73,4 @@ const point: Point = { x:0, y:0}
 // All other behaviors are the same as 'let'
 point.x = 123
 point.y = 456
-console.log(point);
+
