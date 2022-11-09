@@ -2,9 +2,14 @@
  * @returns true if the input string is a palindrome
  */
 
- function isPalindrome(str: string): boolean {
+ export function isPalindrome(str: string): boolean {
     return str === str.split('').reverse().join('');
   }
 
-console.log(isPalindrome('madam')); // true
-console.log(isPalindrome('madan')); // false
+console.log(
+    'Logged in user:',
+    process.env.USER
+)
+
+import fs from 'fs'
+fs.writeFileSync('hello.txt', 'Hello world')

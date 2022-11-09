@@ -1,3 +1,6 @@
+// import { isPalindrome } from './function'
+import * as utils from './function'
+
 let message: string = "Hello world"
 message += ' again'
 console.log(message);
@@ -74,3 +77,8 @@ const point: Point = { x:0, y:0}
 point.x = 123
 point.y = 456
 
+// =============================================================================
+//                               IMPORTING FUNCTION
+// =============================================================================
+console.log(utils.isPalindrome('madam')); // true
+console.log(utils.isPalindrome('madan')); // false

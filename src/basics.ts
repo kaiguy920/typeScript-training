@@ -98,7 +98,7 @@ bird.fly(24)
  class Queue2<T> {
     data: Array<T> = []
     push(item: T) {this.data.push(item)}
-    pop(): T | undefined {return this.data.shift}
+    pop(): T | undefined {return this.data.shift()!}
 }
 
 const queue2 = new Queue2<number>()
