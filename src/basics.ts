@@ -90,3 +90,59 @@ let bird = new Bird('Pigeon')
 bird.fly(24)
 
 
+// =============================================================================
+//                                      GENERICS
+// =============================================================================
+ /** a FIFO collection */
+ 
+ class Queue2<T> {
+    data: Array<T> = []
+    push(item: T) {this.data.push(item)}
+    pop(): T | undefined {return this.data.shift}
+}
+
+const queue2 = new Queue2<number>()
+queue2.push(123)
+queue2.push(54)
+
+// toPrecision() is used to return the string representation in exponential or fixed-point to the specified precision
+console.log(queue2.pop()?.toPrecision(1));
+console.log(queue2.pop()?.toPrecision(1));
+
+// =============================================================================
+//                                      ANY VS UNKNOWN
+// =============================================================================
+// any doesn't put up any checks on inputs
+// unknown allows for all input types, but if there's a specific function requiring a type, it will throw an internal error
+
+function util(value: unknown) {
+    if (typeof value == 'number') { //if statement helps with the internal error that woudl occur with the 'hello world' string being passed through
+      console.log(value.toFixed(2)); //toFixed is only for #'s
+    } else {
+      console.log(value);
+    }
+  }
+  
+  util(123.456);
+  util('Hello world');
+
+// =============================================================================
+//                                      TYPE CASTING
+// =============================================================================
+let leet;
+
+// later
+leet = '1337'
+
+// use as a number
+// const number =  leet as number
+
+// console.log(number === 1337); //false
+// console.log(number); // '1337'
+
+// + operator changes string to a number in TS
+const number = +leet
+
+console.log(number === 1337); //true
+console.log(number); // 1337
+
